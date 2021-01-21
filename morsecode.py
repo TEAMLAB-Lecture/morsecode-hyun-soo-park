@@ -296,6 +296,8 @@ def main():
     inp = ""
     while(inp!='0'):
         inp = input("Input your message(H - Help, 0 - Exit): ")
+        if inp=='0':
+            break
         if is_help_command(inp) == True:
             print(get_help_message())
             continue
@@ -303,7 +305,6 @@ def main():
             print(encoding_sentence(inp))
         elif is_validated_morse_code(inp) == True:
             print(decoding_sentence(inp))
-
         else:
             print("Wrong input")
 
